@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>单例 | 好好学习，天天向上</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="##1：什么是单例模式？ ###单例模式指的是在整个应用周期中只能存在一个实例,在java中单例模式被广泛应用，比如spring管理的bean。 ##2：使用单例的好处？ ###使用单例可以避免实例对象被重复创建，能够有效地节省系统开销。 #单例懒汉、、、public class Signleton { private static Signleton signleton; //私有的构造方法 p">
+  <meta name="description" content="##1：什么是单例模式？ ###单例模式指的是在整个应用周期中只能存在一个实例,在java中单例模式被广泛应用，比如spring管理的bean。 ##2：使用单例的好处？ ###使用单例可以避免实例对象被重复创建，能够有效地节省系统开销。 #单例懒汉 123456789101112public class Signleton &amp;#123;		private static Signleton sig">
 <meta name="keywords" content="wistbean，肯定会，java，python，电台，教程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="单例">
 <meta property="og:url" content="http://yoursite.com/2019/08/21/单例/index.html">
 <meta property="og:site_name" content="好好学习，天天向上">
-<meta property="og:description" content="##1：什么是单例模式？ ###单例模式指的是在整个应用周期中只能存在一个实例,在java中单例模式被广泛应用，比如spring管理的bean。 ##2：使用单例的好处？ ###使用单例可以避免实例对象被重复创建，能够有效地节省系统开销。 #单例懒汉、、、public class Signleton { private static Signleton signleton; //私有的构造方法 p">
+<meta property="og:description" content="##1：什么是单例模式？ ###单例模式指的是在整个应用周期中只能存在一个实例,在java中单例模式被广泛应用，比如spring管理的bean。 ##2：使用单例的好处？ ###使用单例可以避免实例对象被重复创建，能够有效地节省系统开销。 #单例懒汉 123456789101112public class Signleton &amp;#123;		private static Signleton sig">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-21T06:47:51.651Z">
+<meta property="og:updated_time" content="2019-08-21T06:51:25.477Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="单例">
-<meta name="twitter:description" content="##1：什么是单例模式？ ###单例模式指的是在整个应用周期中只能存在一个实例,在java中单例模式被广泛应用，比如spring管理的bean。 ##2：使用单例的好处？ ###使用单例可以避免实例对象被重复创建，能够有效地节省系统开销。 #单例懒汉、、、public class Signleton { private static Signleton signleton; //私有的构造方法 p">
+<meta name="twitter:description" content="##1：什么是单例模式？ ###单例模式指的是在整个应用周期中只能存在一个实例,在java中单例模式被广泛应用，比如spring管理的bean。 ##2：使用单例的好处？ ###使用单例可以避免实例对象被重复创建，能够有效地节省系统开销。 #单例懒汉 123456789101112public class Signleton &amp;#123;		private static Signleton sig">
   
     <link rel="alternative" href="/atom.xml" title="好好学习，天天向上" type="application/atom+xml">
   
@@ -183,17 +183,8 @@
 <p>###单例模式指的是在整个应用周期中只能存在一个实例,在java中单例模式被广泛应用，比如spring管理的bean。</p>
 <p>##2：使用单例的好处？</p>
 <p>###使用单例可以避免实例对象被重复创建，能够有效地节省系统开销。</p>
-<p>#单例懒汉<br>、、、<br>public class Signleton {</p>
-<pre><code>private static Signleton signleton;
-//私有的构造方法
-private Signleton(){};
-public static Signleton getSignelton(){
-    if (signleton == null) {
-        return new Signleton();
-    }
-    return signleton;
-}</code></pre><p>}<br>、、、</p>
-
+<p>#单例懒汉</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">public class Signleton &#123;</span><br><span class="line">	</span><br><span class="line">	private static Signleton signleton;</span><br><span class="line">	//私有的构造方法</span><br><span class="line">	private Signleton()&#123;&#125;;</span><br><span class="line">	public static Signleton getSignelton()&#123;</span><br><span class="line">		if (signleton == null) &#123;</span><br><span class="line">			return new Signleton();</span><br><span class="line">		&#125;</span><br><span class="line">		return signleton;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
 
       
