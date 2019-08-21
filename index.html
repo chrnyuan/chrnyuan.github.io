@@ -160,6 +160,82 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-单例" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/21/单例/">单例</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/21/单例/" class="archive-article-date">
+  	<time datetime="2019-08-21T06:39:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>##1：什么是单例模式？</p>
+<p>###单例模式指的是在整个应用周期中只能存在一个实例,在java中单例模式被广泛应用，比如spring管理的bean。</p>
+<p>##2：使用单例的好处？</p>
+<p>###使用单例可以避免实例对象被重复创建，能够有效地节省系统开销。</p>
+<p>#单例懒汉<br>、、、<br>public class Signleton {</p>
+<pre><code>private static Signleton signleton;
+//私有的构造方法
+private Signleton(){};
+public static Signleton getSignelton(){
+    if (signleton == null) {
+        return new Signleton();
+    }
+    return signleton;
+}</code></pre><p>}<br>、、、</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/21/单例/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-testHexo" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     

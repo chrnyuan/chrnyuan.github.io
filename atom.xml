@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-08-21T06:30:44.994Z</updated>
+  <updated>2019-08-21T06:47:51.651Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>单例</title>
+    <link href="http://yoursite.com/2019/08/21/%E5%8D%95%E4%BE%8B/"/>
+    <id>http://yoursite.com/2019/08/21/单例/</id>
+    <published>2019-08-21T06:39:08.000Z</published>
+    <updated>2019-08-21T06:47:51.651Z</updated>
+    
+    <content type="html"><![CDATA[<p>##1：什么是单例模式？</p><p>###单例模式指的是在整个应用周期中只能存在一个实例,在java中单例模式被广泛应用，比如spring管理的bean。</p><p>##2：使用单例的好处？</p><p>###使用单例可以避免实例对象被重复创建，能够有效地节省系统开销。</p><p>#单例懒汉<br>、、、<br>public class Signleton {</p><pre><code>private static Signleton signleton;//私有的构造方法private Signleton(){};public static Signleton getSignelton(){    if (signleton == null) {        return new Signleton();    }    return signleton;}</code></pre><p>}<br>、、、</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;##1：什么是单例模式？&lt;/p&gt;
+&lt;p&gt;###单例模式指的是在整个应用周期中只能存在一个实例,在java中单例模式被广泛应用，比如spring管理的bean。&lt;/p&gt;
+&lt;p&gt;##2：使用单例的好处？&lt;/p&gt;
+&lt;p&gt;###使用单例可以避免实例对象被重复创建，能够有效地节省系统
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>testHexo</title>
