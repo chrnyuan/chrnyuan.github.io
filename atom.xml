@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-08-21T05:50:33.860Z</updated>
+  <updated>2019-08-21T06:03:02.644Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,55 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>接口和抽象类的区别</title>
+    <link href="http://yoursite.com/2019/08/21/%E6%8E%A5%E5%8F%A3%E5%92%8C%E6%8A%BD%E8%B1%A1%E7%B1%BB%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
+    <id>http://yoursite.com/2019/08/21/接口和抽象类的区别/</id>
+    <published>2019-08-21T06:02:32.000Z</published>
+    <updated>2019-08-21T06:03:02.644Z</updated>
+    
+    <content type="html"><![CDATA[<p>接口和抽象类的区别<br><a href="https://blog.csdn.net/wbq620524/article/details/53032466" target="_blank" rel="noopener">https://blog.csdn.net/wbq620524/article/details/53032466</a><br><a href="https://www.cnblogs.com/yongjiapei/p/5494894.html" target="_blank" rel="noopener">https://www.cnblogs.com/yongjiapei/p/5494894.html</a><br>1：接口用interface修饰，抽象类用abstract修饰<br>2：接口只有抽象方法，没有普通方法，而抽象类可以有普通方法<br>3：接口可以多继承，而抽象类只能单继承<br>4：接口中定义的变量只能是公共的静态的常量，抽象类中的变量只是常量<br>5：抽象类在写抽象方法是需要abstract关键字来修饰，而接口不需要</p><p>抽象类<br>特点:<br>1.抽象类中可以构造方法<br>2.抽象类中可以存在普通属性，方法，静态属性和方法。<br>3.抽象类中可以存在抽象方法。<br>4.如果一个类中有一个抽象方法，那么当前类一定是抽象类；抽象类中不一定有抽象方法。<br>5.抽象类中的抽象方法，需要有子类实现，如果子类不实现，则子类也需要定义为抽象的。<br>接口<br>1.在接口中只有方法的声明，没有方法体。<br>2.在接口中只有常量，因为定义的变量，在编译的时候都会默认加上<br>public static final<br>3.在接口中的方法，永远都被public来修饰。<br>4.接口中没有构造方法，也不能实例化接口的对象。<br>5.接口可以实现多继承<br>6.接口中定义的方法都需要有实现类来实现，如果实现类不能实现接口中的所有方法<br>7.则实现类定义为抽象类。<br>接口和抽象类的相同点<br>接口都是被 public final修饰的</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;接口和抽象类的区别&lt;br&gt;&lt;a href=&quot;https://blog.csdn.net/wbq620524/article/details/53032466&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://blog.csdn.net/wbq6
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>tomcat的下载与介绍</title>
+    <link href="http://yoursite.com/2019/08/21/tomcat%E7%9A%84%E4%B8%8B%E8%BD%BD%E4%B8%8E%E4%BB%8B%E7%BB%8D/"/>
+    <id>http://yoursite.com/2019/08/21/tomcat的下载与介绍/</id>
+    <published>2019-08-21T05:59:22.000Z</published>
+    <updated>2019-08-21T05:59:22.707Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Java中==与equals的区别</title>
+    <link href="http://yoursite.com/2019/08/21/Java%E4%B8%AD-%E4%B8%8Eequals%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
+    <id>http://yoursite.com/2019/08/21/Java中-与equals的区别/</id>
+    <published>2019-08-21T05:56:31.000Z</published>
+    <updated>2019-08-21T05:56:31.552Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>title</title>
