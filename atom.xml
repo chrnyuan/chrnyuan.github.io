@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>好好学习，天天向上</title>
+  
+  <subtitle>study</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2019-08-21T05:50:33.860Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>zyk</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>title</title>
+    <link href="http://yoursite.com/2019/08/21/title/"/>
+    <id>http://yoursite.com/2019/08/21/title/</id>
+    <published>2019-08-21T05:46:28.000Z</published>
+    <updated>2019-08-21T05:50:33.860Z</updated>
+    
+    <content type="html"><![CDATA[<p>shiro是一个轻量级的权限验证框架：主要用来身份验证，授权，加密，会话管理</p><p>shiro的四大作用：<br>    认证 、 授权、 加密 、会话管理<br>shiro三大核心组件：<br>    Subject组件：代指当前用户<br>    SecurityManager组件：用于管理所有的Subject<br>    Reaml组件：用户验证用户的认证与授权</p><p>shiro<br>1：创建shiroConfig类 ，配置webfilterBean 把securityManager注册到webfilterBean(安全管理器)<br>    Bean中设置需要拦截的url，和需要放行的url</p><p>2: 创建SecurityManager（安全管理器） ，实例化DefaultWebSecurityManager,将realm交给SecurityManager<br>    管理。<br>    DefaultWebSecurityManager </p><p>3：创建自定义的Realm,继承Authorizing,重写认证和授权的方法。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;shiro是一个轻量级的权限验证框架：主要用来身份验证，授权，加密，会话管理&lt;/p&gt;
+&lt;p&gt;shiro的四大作用：&lt;br&gt;    认证 、 授权、 加密 、会话管理&lt;br&gt;shiro三大核心组件：&lt;br&gt;    Subject组件：代指当前用户&lt;br&gt;    Securit
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>你好 hexo</title>
+    <link href="http://yoursite.com/2019/07/29/%E4%BD%A0%E5%A5%BD-hexo/"/>
+    <id>http://yoursite.com/2019/07/29/你好-hexo/</id>
+    <published>2019-07-29T10:18:15.000Z</published>
+    <updated>2019-07-29T10:18:15.315Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>你好 ，Hexo</title>
+    <link href="http://yoursite.com/2019/07/29/%E4%BD%A0%E5%A5%BD-%EF%BC%8CHexo/"/>
+    <id>http://yoursite.com/2019/07/29/你好-，Hexo/</id>
+    <published>2019-07-29T10:14:47.000Z</published>
+    <updated>2019-07-29T10:14:47.558Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/2019/07/29/hello-world/"/>
+    <id>http://yoursite.com/2019/07/29/hello-world/</id>
+    <published>2019-07-29T09:51:14.146Z</published>
+    <updated>2019-07-29T09:51:14.146Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
