@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-08-21T06:51:25.477Z</updated>
+  <updated>2019-08-21T07:00:45.914Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,33 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>饿汉式</title>
+    <link href="http://yoursite.com/2019/08/21/%E9%A5%BF%E6%B1%89%E5%BC%8F/"/>
+    <id>http://yoursite.com/2019/08/21/饿汉式/</id>
+    <published>2019-08-21T06:59:57.000Z</published>
+    <updated>2019-08-21T07:00:45.914Z</updated>
+    
+    <content type="html"><![CDATA[<p>#这是一个简单的饿汉式</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">class Signleton1&#123;</span><br><span class="line">//饿汉式 初始化即创建实例对象</span><br><span class="line">private static Signleton1 signleton1 = new Signleton1();</span><br><span class="line">private Signleton1()&#123;&#125;;</span><br><span class="line"></span><br><span class="line">public static Signleton1 getSignleton1()&#123;</span><br><span class="line">return signleton1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;#这是一个简单的饿汉式&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/s
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>单例</title>
     <link href="http://yoursite.com/2019/08/21/%E5%8D%95%E4%BE%8B/"/>
     <id>http://yoursite.com/2019/08/21/单例/</id>
     <published>2019-08-21T06:39:08.000Z</published>
-    <updated>2019-08-21T06:51:25.477Z</updated>
+    <updated>2019-08-21T06:53:09.459Z</updated>
     
     <content type="html"><![CDATA[<p>##1：什么是单例模式？</p><p>###单例模式指的是在整个应用周期中只能存在一个实例,在java中单例模式被广泛应用，比如spring管理的bean。</p><p>##2：使用单例的好处？</p><p>###使用单例可以避免实例对象被重复创建，能够有效地节省系统开销。</p><p>#单例懒汉</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">public class Signleton &#123;</span><br><span class="line"></span><br><span class="line">private static Signleton signleton;</span><br><span class="line">//私有的构造方法</span><br><span class="line">private Signleton()&#123;&#125;;</span><br><span class="line">public static Signleton getSignelton()&#123;</span><br><span class="line">if (signleton == null) &#123;</span><br><span class="line">return new Signleton();</span><br><span class="line">&#125;</span><br><span class="line">return signleton;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
     
