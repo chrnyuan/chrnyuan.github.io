@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>zyk</title>
+  <title>单例模式 | zyk</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="zyk的个人博客">
-<meta name="keywords" content="wistbean，html，java，python，ajax，spring">
-<meta property="og:type" content="website">
-<meta property="og:title" content="zyk">
-<meta property="og:url" content="http://yoursite.com/page/2/index.html">
+  <meta name="description" content="菜鸟教程单例模式 单例是什么？ 单例是在整个程序生命周期中只会创建一次实例的对象,不会被其他对象实例化,节省了系统开销 实现单例的三种方法1 懒汉式单例123456789101112131415161718192021    public class Signleton &amp;#123;	//懒汉式单例非安全的		//static 静态的保证程序在启动时就实例化对象	private static Si">
+<meta name="keywords" content="单例模式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="单例模式">
+<meta property="og:url" content="http://yoursite.com/2019/08/22/单例模式/index.html">
 <meta property="og:site_name" content="zyk">
-<meta property="og:description" content="zyk的个人博客">
+<meta property="og:description" content="菜鸟教程单例模式 单例是什么？ 单例是在整个程序生命周期中只会创建一次实例的对象,不会被其他对象实例化,节省了系统开销 实现单例的三种方法1 懒汉式单例123456789101112131415161718192021    public class Signleton &amp;#123;	//懒汉式单例非安全的		//static 静态的保证程序在启动时就实例化对象	private static Si">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-08-22T08:45:40.255Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="zyk">
-<meta name="twitter:description" content="zyk的个人博客">
+<meta name="twitter:title" content="单例模式">
+<meta name="twitter:description" content="菜鸟教程单例模式 单例是什么？ 单例是在整个程序生命周期中只会创建一次实例的对象,不会被其他对象实例化,节省了系统开销 实现单例的三种方法1 懒汉式单例123456789101112131415161718192021    public class Signleton &amp;#123;	//懒汉式单例非安全的		//static 静态的保证程序在启动时就实例化对象	private static Si">
   
     <link rel="alternative" href="/atom.xml" title="zyk" type="application/atom+xml">
   
@@ -161,49 +162,157 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-Java中-与equals的区别" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-单例模式" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/21/Java中-与equals的区别/">Java中==与equals的区别</a>
+    <h1 class="article-title" itemprop="name">
+      单例模式
     </h1>
   
 
         
-        <a href="/2019/08/21/Java中-与equals的区别/" class="archive-article-date">
-  	<time datetime="2019-08-21T05:56:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-21</time>
+        <a href="/2019/08/22/单例模式/" class="archive-article-date">
+  	<time datetime="2019-08-22T08:42:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-22</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p><a href="https://www.runoob.com/design-pattern/singleton-pattern.html" target="_blank" rel="noopener">菜鸟教程单例模式</a></p>
+<h3 id="单例是什么？"><a href="#单例是什么？" class="headerlink" title="单例是什么？"></a>单例是什么？</h3><p> 单例是在整个程序生命周期中只会创建一次实例的对象,不会被其他对象实例化,节省了系统开销</p>
+<h3 id="实现单例的三种方法"><a href="#实现单例的三种方法" class="headerlink" title="实现单例的三种方法"></a>实现单例的三种方法</h3><pre><code>1 懒汉式单例</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">    public class Signleton &#123;</span><br><span class="line">	//懒汉式单例非安全的</span><br><span class="line">	</span><br><span class="line">	//static 静态的保证程序在启动时就实例化对象</span><br><span class="line">	private static Signleton signleton;</span><br><span class="line">	</span><br><span class="line">	public static Signleton getSignleton()&#123;</span><br><span class="line">		if (signleton == null) &#123;</span><br><span class="line">			return new Signleton();</span><br><span class="line">		&#125;</span><br><span class="line">		return signleton;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	/**</span><br><span class="line">	 * 私有其构造方法外部类无法创建实例对象</span><br><span class="line">	 */</span><br><span class="line">	private Signleton()&#123;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>2懒汉时安全单例，只是加了synchronized关键字</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">class Signleton2&#123;</span><br><span class="line">	</span><br><span class="line">	private static Signleton2 signleton2;</span><br><span class="line">	/**</span><br><span class="line">	 * 添加synchronized关键字，线程同步</span><br><span class="line">	 * @return</span><br><span class="line">	 */</span><br><span class="line">	public static synchronized Signleton2 getSignleton()&#123;</span><br><span class="line">		if (signleton2 == null) &#123;</span><br><span class="line">			return new Signleton2();</span><br><span class="line">		&#125;</span><br><span class="line">		return signleton2;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	private Signleton2()&#123;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> 3饿汉式单例<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"> class Signleton3&#123;</span><br><span class="line">	// 饿汉式是安全的单例</span><br><span class="line">	private static Signleton3 signleton3 = new Signleton3();</span><br><span class="line">	</span><br><span class="line">	public static Signleton3 getSignleton3()&#123;</span><br><span class="line">		return signleton3;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	private Signleton3()&#123;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<!-- # 使用 pv 记录方式，每访问一次，记录一次--> 
+<p><span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span></p>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">单例模式</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/21/Java中-与equals的区别/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/22/单例模式/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2019/08/22/单例模式-1/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          单例模式
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/08/22/ajax（一）-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ajax（一）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -223,345 +332,14 @@
 
 
 
-
-  
-    <article id="post-title" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/21/title/">title</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/21/title/" class="archive-article-date">
-  	<time datetime="2019-08-21T05:46:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>shiro是一个轻量级的权限验证框架：主要用来身份验证，授权，加密，会话管理</p>
-<p>shiro的四大作用：<br>    认证 、 授权、 加密 、会话管理<br>shiro三大核心组件：<br>    Subject组件：代指当前用户<br>    SecurityManager组件：用于管理所有的Subject<br>    Reaml组件：用户验证用户的认证与授权</p>
-<p>shiro<br>1：创建shiroConfig类 ，配置webfilterBean 把securityManager注册到webfilterBean(安全管理器)<br>    Bean中设置需要拦截的url，和需要放行的url</p>
-<p>2: 创建SecurityManager（安全管理器） ，实例化DefaultWebSecurityManager,将realm交给SecurityManager<br>    管理。<br>    DefaultWebSecurityManager </p>
-<p>3：创建自定义的Realm,继承Authorizing,重写认证和授权的方法。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/21/title/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-shiro" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/21/shiro/">title</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/21/shiro/" class="archive-article-date">
-  	<time datetime="2019-08-21T05:46:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>shiro是一个轻量级的权限验证框架：主要用来身份验证，授权，加密，会话管理</p>
-<p>shiro的四大作用：<br>    认证 、 授权、 加密 、会话管理<br>shiro三大核心组件：<br>    Subject组件：代指当前用户<br>    SecurityManager组件：用于管理所有的Subject<br>    Reaml组件：用户验证用户的认证与授权</p>
-<p>shiro<br>1：创建shiroConfig类 ，配置webfilterBean 把securityManager注册到webfilterBean(安全管理器)<br>    Bean中设置需要拦截的url，和需要放行的url</p>
-<p>2: 创建SecurityManager（安全管理器） ，实例化DefaultWebSecurityManager,将realm交给SecurityManager<br>    管理。<br>    DefaultWebSecurityManager </p>
-<p>3：创建自定义的Realm,继承Authorizing,重写认证和授权的方法。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/21/shiro/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-你好-hexo" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/29/你好-hexo/">你好 hexo</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/29/你好-hexo/" class="archive-article-date">
-  	<time datetime="2019-07-29T10:18:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/29/你好-hexo/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-你好-，Hexo" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/29/你好-，Hexo/">你好 ，Hexo</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/29/你好-，Hexo/" class="archive-article-date">
-  	<time datetime="2019-07-29T10:14:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/29/你好-，Hexo/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/29/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/29/hello-world/" class="archive-article-date">
-  	<time datetime="2019-07-29T09:51:14.146Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/29/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -595,8 +373,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
