@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>zyk</title>
   
-  <subtitle>study</subtitle>
+  <subtitle>Java ajax，spring，mybatis</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-08-21T08:18:35.278Z</updated>
+  <updated>2019-08-22T07:30:47.979Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ajax（一）</title>
+    <link href="http://yoursite.com/2019/08/22/ajax%EF%BC%88%E4%B8%80%EF%BC%89-1/"/>
+    <id>http://yoursite.com/2019/08/22/ajax（一）-1/</id>
+    <published>2019-08-22T07:30:47.000Z</published>
+    <updated>2019-08-22T07:30:47.979Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>ajax（一）</title>
+    <link href="http://yoursite.com/2019/08/22/ajax%EF%BC%88%E4%B8%80%EF%BC%89/"/>
+    <id>http://yoursite.com/2019/08/22/ajax（一）/</id>
+    <published>2019-08-22T07:28:06.000Z</published>
+    <updated>2019-08-22T07:28:06.467Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>MybatisPlus</title>
@@ -152,10 +180,10 @@
   
   <entry>
     <title>title</title>
-    <link href="http://yoursite.com/2019/08/21/title/"/>
-    <id>http://yoursite.com/2019/08/21/title/</id>
+    <link href="http://yoursite.com/2019/08/21/shiro/"/>
+    <id>http://yoursite.com/2019/08/21/shiro/</id>
     <published>2019-08-21T05:46:28.000Z</published>
-    <updated>2019-08-21T06:31:44.351Z</updated>
+    <updated>2019-08-21T05:50:33.860Z</updated>
     
     <content type="html"><![CDATA[<p>shiro是一个轻量级的权限验证框架：主要用来身份验证，授权，加密，会话管理</p><p>shiro的四大作用：<br>    认证 、 授权、 加密 、会话管理<br>shiro三大核心组件：<br>    Subject组件：代指当前用户<br>    SecurityManager组件：用于管理所有的Subject<br>    Reaml组件：用户验证用户的认证与授权</p><p>shiro<br>1：创建shiroConfig类 ，配置webfilterBean 把securityManager注册到webfilterBean(安全管理器)<br>    Bean中设置需要拦截的url，和需要放行的url</p><p>2: 创建SecurityManager（安全管理器） ，实例化DefaultWebSecurityManager,将realm交给SecurityManager<br>    管理。<br>    DefaultWebSecurityManager </p><p>3：创建自定义的Realm,继承Authorizing,重写认证和授权的方法。</p>]]></content>
     
@@ -174,10 +202,10 @@
   
   <entry>
     <title>title</title>
-    <link href="http://yoursite.com/2019/08/21/shiro/"/>
-    <id>http://yoursite.com/2019/08/21/shiro/</id>
+    <link href="http://yoursite.com/2019/08/21/title/"/>
+    <id>http://yoursite.com/2019/08/21/title/</id>
     <published>2019-08-21T05:46:28.000Z</published>
-    <updated>2019-08-21T05:50:33.860Z</updated>
+    <updated>2019-08-21T06:31:44.351Z</updated>
     
     <content type="html"><![CDATA[<p>shiro是一个轻量级的权限验证框架：主要用来身份验证，授权，加密，会话管理</p><p>shiro的四大作用：<br>    认证 、 授权、 加密 、会话管理<br>shiro三大核心组件：<br>    Subject组件：代指当前用户<br>    SecurityManager组件：用于管理所有的Subject<br>    Reaml组件：用户验证用户的认证与授权</p><p>shiro<br>1：创建shiroConfig类 ，配置webfilterBean 把securityManager注册到webfilterBean(安全管理器)<br>    Bean中设置需要拦截的url，和需要放行的url</p><p>2: 创建SecurityManager（安全管理器） ，实例化DefaultWebSecurityManager,将realm交给SecurityManager<br>    管理。<br>    DefaultWebSecurityManager </p><p>3：创建自定义的Realm,继承Authorizing,重写认证和授权的方法。</p>]]></content>
     
