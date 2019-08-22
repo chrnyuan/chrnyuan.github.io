@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-08-22T08:45:46.666Z</updated>
+  <updated>2019-08-22T08:45:40.255Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,20 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>单例模式</title>
-    <link href="http://yoursite.com/2019/08/22/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F-1/"/>
-    <id>http://yoursite.com/2019/08/22/单例模式-1/</id>
-    <published>2019-08-22T08:45:46.000Z</published>
-    <updated>2019-08-22T08:45:46.666Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>单例模式</title>
@@ -51,20 +37,6 @@
     
     
       <category term="单例模式" scheme="http://yoursite.com/tags/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ajax（一）</title>
-    <link href="http://yoursite.com/2019/08/22/ajax%EF%BC%88%E4%B8%80%EF%BC%89-1/"/>
-    <id>http://yoursite.com/2019/08/22/ajax（一）-1/</id>
-    <published>2019-08-22T07:30:47.000Z</published>
-    <updated>2019-08-22T07:30:47.979Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
     
   </entry>
   
@@ -96,28 +68,6 @@
       
       
         &lt;h1 id=&quot;Mybatis-Plus-代码生成器&quot;&gt;&lt;a href=&quot;#Mybatis-Plus-代码生成器&quot; class=&quot;headerlink&quot; title=&quot;Mybatis-Plus 代码生成器&quot;&gt;&lt;/a&gt;Mybatis-Plus 代码生成器&lt;/h1&gt;&lt;h1 id=&quot;1
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>饿汉式</title>
-    <link href="http://yoursite.com/2019/08/21/%E9%A5%BF%E6%B1%89%E5%BC%8F/"/>
-    <id>http://yoursite.com/2019/08/21/饿汉式/</id>
-    <published>2019-08-21T06:59:57.000Z</published>
-    <updated>2019-08-21T07:00:45.914Z</updated>
-    
-    <content type="html"><![CDATA[<p>#这是一个简单的饿汉式</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">class Signleton1&#123;</span><br><span class="line">//饿汉式 初始化即创建实例对象</span><br><span class="line">private static Signleton1 signleton1 = new Signleton1();</span><br><span class="line">private Signleton1()&#123;&#125;;</span><br><span class="line"></span><br><span class="line">public static Signleton1 getSignleton1()&#123;</span><br><span class="line">return signleton1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;#这是一个简单的饿汉式&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/s
       
     
     </summary>
@@ -254,34 +204,6 @@
         &lt;p&gt;shiro是一个轻量级的权限验证框架：主要用来身份验证，授权，加密，会话管理&lt;/p&gt;
 &lt;p&gt;shiro的四大作用：&lt;br&gt;    认证 、 授权、 加密 、会话管理&lt;br&gt;shiro三大核心组件：&lt;br&gt;    Subject组件：代指当前用户&lt;br&gt;    Securit
       
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>你好 hexo</title>
-    <link href="http://yoursite.com/2019/07/29/%E4%BD%A0%E5%A5%BD-hexo/"/>
-    <id>http://yoursite.com/2019/07/29/你好-hexo/</id>
-    <published>2019-07-29T10:18:15.000Z</published>
-    <updated>2019-07-29T10:18:15.315Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>你好 ，Hexo</title>
-    <link href="http://yoursite.com/2019/07/29/%E4%BD%A0%E5%A5%BD-%EF%BC%8CHexo/"/>
-    <id>http://yoursite.com/2019/07/29/你好-，Hexo/</id>
-    <published>2019-07-29T10:14:47.000Z</published>
-    <updated>2019-07-29T10:14:47.558Z</updated>
-    
-    <summary type="html">
     
     </summary>
     
