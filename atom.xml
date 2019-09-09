@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-09-07T07:39:36.199Z</updated>
+  <updated>2019-09-09T05:06:49.939Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>生成图片验证码Kaptcha</title>
+    <link href="http://yoursite.com/2019/09/09/%E7%94%9F%E6%88%90%E5%9B%BE%E7%89%87%E9%AA%8C%E8%AF%81%E7%A0%81Kaptcha/"/>
+    <id>http://yoursite.com/2019/09/09/生成图片验证码Kaptcha/</id>
+    <published>2019-09-09T03:35:26.000Z</published>
+    <updated>2019-09-09T05:06:49.939Z</updated>
+    
+    <content type="html"><![CDATA[<p>图片验证码一般是为了网站的登录或其他接口被被恶意请求</p><p>Google的Kapatcha验证码是一个简单容易上手的验证码工具。</p><a id="more"></a><p>一：创建springboot项目,pom文件中添加Kaptcha的Maven依赖</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;com.github.axet&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;kaptcha&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;0.0.9&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure><p>二：配置Kaptcha的Bean</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 验证码配置</span><br><span class="line"> * @author ZYK</span><br><span class="line"> * 2019年9月9日 上午10:55:38</span><br><span class="line"> * Desc:</span><br><span class="line"> */</span><br><span class="line">@Configuration</span><br><span class="line">public class KaptchaConfig &#123;</span><br><span class="line"></span><br><span class="line">@Bean</span><br><span class="line">public DefaultKaptcha producer()&#123;</span><br><span class="line"></span><br><span class="line">Properties properties = new Properties();</span><br><span class="line"></span><br><span class="line">properties.put(&quot;kaptcha.border&quot; , &quot;no&quot;);//</span><br><span class="line">    properties.put(&quot;kaptcha.textproducer.font.color&quot; , &quot;blue&quot;);//设置字体颜色</span><br><span class="line">    properties.put(&quot;kaptcha.textproducer.char.space&quot; , &quot;5&quot;);</span><br><span class="line">    </span><br><span class="line">DefaultKaptcha defaultKaptcha = new DefaultKaptcha();</span><br><span class="line">Config config = new Config(properties);</span><br><span class="line">defaultKaptcha.setConfig(config);</span><br><span class="line">return defaultKaptcha;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>三：代码实现</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">@RestController</span><br><span class="line">@Slf4j</span><br><span class="line">@AllArgsConstructor//生成一个包含所有参数的构造方法</span><br><span class="line">public class TestController &#123;</span><br><span class="line">//@Autowired</span><br><span class="line">private Producer producer;</span><br><span class="line">/**</span><br><span class="line">     * 使用google的kaptcha生成验证码</span><br><span class="line">     */</span><br><span class="line">    @SneakyThrows</span><br><span class="line">    @RequestMapping(&quot;/sys/code&quot;)</span><br><span class="line">    public void captcha( HttpServletResponse response) &#123;</span><br><span class="line">        response.setHeader(&quot;Cache-Control&quot; , &quot;no-store, no-cache&quot;);</span><br><span class="line">        response.setContentType(&quot;image/jpeg&quot;);</span><br><span class="line">        //生成文字验证码</span><br><span class="line">        String text = producer.createText();</span><br><span class="line">        log.info(&quot;==================验证码:&#123;&#125;====================&quot; , text);</span><br><span class="line">        //生成图片验证码</span><br><span class="line">        BufferedImage image = producer.createImage(text);</span><br><span class="line">        ServletOutputStream out = response.getOutputStream();</span><br><span class="line">        ImageIO.write(image, &quot;jpg&quot; , out);</span><br><span class="line">        IOUtils.closeQuietly(out);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>后端完成</p><!-- # 使用 pv 记录方式，每访问一次，记录一次--> <p><span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;图片验证码一般是为了网站的登录或其他接口被被恶意请求&lt;/p&gt;
+&lt;p&gt;Google的Kapatcha验证码是一个简单容易上手的验证码工具。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Java" scheme="http://yoursite.com/categories/Java/"/>
+    
+    
+      <category term="验证码" scheme="http://yoursite.com/tags/%E9%AA%8C%E8%AF%81%E7%A0%81/"/>
+    
+      <category term="Kaptcha" scheme="http://yoursite.com/tags/Kaptcha/"/>
+    
+  </entry>
   
   <entry>
     <title>设置mysql远程连接</title>
