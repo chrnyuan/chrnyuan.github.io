@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: IO | zyk</title>
+  <title>springboot_email | zyk</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="zyk的个人博客">
-<meta name="keywords" content="wistbean，html，java，python，ajax，spring">
-<meta property="og:type" content="website">
-<meta property="og:title" content="zyk">
-<meta property="og:url" content="http://yoursite.com/tags/IO/index.html">
+  <meta name="description" content="springboot+Mail集成，实现对邮件的发送。主要应用场景：忘记密码，通过邮箱验证码找回等 1：邮箱开启SMTP服务设置邮箱账号，我使用的是网易邮箱，需要开通SMTP(简单的邮箱传输协议)，在网易邮箱点击设置–&amp;gt;POP3/SMTP/IMAP–然后开启客户端授权密码，需要记住此密码 2：springboot代码部分pom文件 123456789101112131415161718192">
+<meta name="keywords" content="springboot">
+<meta property="og:type" content="article">
+<meta property="og:title" content="springboot_email">
+<meta property="og:url" content="http://yoursite.com/2019/10/30/springboot-email/index.html">
 <meta property="og:site_name" content="zyk">
-<meta property="og:description" content="zyk的个人博客">
+<meta property="og:description" content="springboot+Mail集成，实现对邮件的发送。主要应用场景：忘记密码，通过邮箱验证码找回等 1：邮箱开启SMTP服务设置邮箱账号，我使用的是网易邮箱，需要开通SMTP(简单的邮箱传输协议)，在网易邮箱点击设置–&amp;gt;POP3/SMTP/IMAP–然后开启客户端授权密码，需要记住此密码 2：springboot代码部分pom文件 123456789101112131415161718192">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-10-30T10:14:18.454Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="zyk">
-<meta name="twitter:description" content="zyk的个人博客">
+<meta name="twitter:title" content="springboot_email">
+<meta name="twitter:description" content="springboot+Mail集成，实现对邮件的发送。主要应用场景：忘记密码，通过邮箱验证码找回等 1：邮箱开启SMTP服务设置邮箱账号，我使用的是网易邮箱，需要开通SMTP(简单的邮箱传输协议)，在网易邮箱点击设置–&amp;gt;POP3/SMTP/IMAP–然后开启客户端授权密码，需要记住此密码 2：springboot代码部分pom文件 123456789101112131415161718192">
   
     <link rel="alternative" href="/atom.xml" title="zyk" type="application/atom+xml">
   
@@ -179,36 +180,79 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-springboot-email" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/05/文件上传/" class="archive-article-date">
-  	<time datetime="2019-09-05T05:11:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-05</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/05/文件上传/">文件上传</a>
+    <h1 class="article-title" itemprop="name">
+      springboot_email
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/10/30/springboot-email/" class="archive-article-date">
+  	<time datetime="2019-10-30T10:12:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>springboot+Mail集成，实现对邮件的发送。主要应用场景：忘记密码，通过邮箱验证码找回等</p>
+<h4 id="1：邮箱开启SMTP服务"><a href="#1：邮箱开启SMTP服务" class="headerlink" title="1：邮箱开启SMTP服务"></a>1：邮箱开启SMTP服务</h4><p>设置邮箱账号，我使用的是网易邮箱，需要开通SMTP(简单的邮箱传输协议)，<br>在网易邮箱点击设置–&gt;POP3/SMTP/IMAP–然后开启客户端授权密码<br>，需要记住此密码</p>
+<h3 id="2：springboot代码部分"><a href="#2：springboot代码部分" class="headerlink" title="2：springboot代码部分"></a>2：springboot代码部分</h3><p>pom文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><br><span class="line">	xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;</span><br><span class="line">	&lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</span><br><span class="line">	&lt;parent&gt;</span><br><span class="line">		&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">		&lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;</span><br><span class="line">		&lt;version&gt;2.1.3.RELEASE&lt;/version&gt;</span><br><span class="line">		&lt;relativePath/&gt; &lt;!-- lookup parent from repository --&gt;</span><br><span class="line">	&lt;/parent&gt;</span><br><span class="line">	&lt;groupId&gt;com.example&lt;/groupId&gt;</span><br><span class="line">	&lt;artifactId&gt;springboot_mail&lt;/artifactId&gt;</span><br><span class="line">	&lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;</span><br><span class="line">	&lt;name&gt;springboot_mail&lt;/name&gt;</span><br><span class="line">	&lt;description&gt;Demo project for Spring Boot&lt;/description&gt;</span><br><span class="line"></span><br><span class="line">	&lt;properties&gt;</span><br><span class="line">		&lt;java.version&gt;1.8&lt;/java.version&gt;</span><br><span class="line">	&lt;/properties&gt;</span><br><span class="line"></span><br><span class="line">	&lt;dependencies&gt;</span><br><span class="line">		&lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;</span><br><span class="line">            &lt;scope&gt;test&lt;/scope&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        </span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-boot-starter-mail&lt;/artifactId&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        </span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">    		&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">    		&lt;artifactId&gt;spring-boot-starter-thymeleaf&lt;/artifactId&gt;</span><br><span class="line">		&lt;/dependency&gt;</span><br><span class="line">	&lt;/dependencies&gt;</span><br><span class="line"></span><br><span class="line">	&lt;build&gt;</span><br><span class="line">		&lt;plugins&gt;</span><br><span class="line">			&lt;plugin&gt;</span><br><span class="line">				&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">				&lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;</span><br><span class="line">			&lt;/plugin&gt;</span><br><span class="line">		&lt;/plugins&gt;</span><br><span class="line">	&lt;/build&gt;</span><br><span class="line"></span><br><span class="line">&lt;/project&gt;</span><br></pre></td></tr></table></figure>
+
+<p>application.yml</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><br><span class="line">	xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;</span><br><span class="line">	&lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</span><br><span class="line">	&lt;parent&gt;</span><br><span class="line">		&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">		&lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;</span><br><span class="line">		&lt;version&gt;2.1.3.RELEASE&lt;/version&gt;</span><br><span class="line">		&lt;relativePath/&gt; &lt;!-- lookup parent from repository --&gt;</span><br><span class="line">	&lt;/parent&gt;</span><br><span class="line">	&lt;groupId&gt;com.example&lt;/groupId&gt;</span><br><span class="line">	&lt;artifactId&gt;springboot_mail&lt;/artifactId&gt;</span><br><span class="line">	&lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;</span><br><span class="line">	&lt;name&gt;springboot_mail&lt;/name&gt;</span><br><span class="line">	&lt;description&gt;Demo project for Spring Boot&lt;/description&gt;</span><br><span class="line"></span><br><span class="line">	&lt;properties&gt;</span><br><span class="line">		&lt;java.version&gt;1.8&lt;/java.version&gt;</span><br><span class="line">	&lt;/properties&gt;</span><br><span class="line"></span><br><span class="line">	&lt;dependencies&gt;</span><br><span class="line">		&lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;</span><br><span class="line">            &lt;scope&gt;test&lt;/scope&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        </span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-boot-starter-mail&lt;/artifactId&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        </span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">    		&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">    		&lt;artifactId&gt;spring-boot-starter-thymeleaf&lt;/artifactId&gt;</span><br><span class="line">		&lt;/dependency&gt;</span><br><span class="line">	&lt;/dependencies&gt;</span><br><span class="line"></span><br><span class="line">	&lt;build&gt;</span><br><span class="line">		&lt;plugins&gt;</span><br><span class="line">			&lt;plugin&gt;</span><br><span class="line">				&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">				&lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;</span><br><span class="line">			&lt;/plugin&gt;</span><br><span class="line">		&lt;/plugins&gt;</span><br><span class="line">	&lt;/build&gt;</span><br><span class="line"></span><br><span class="line">&lt;/project&gt;</span><br></pre></td></tr></table></figure>
+
+<p>Controller</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br></pre></td><td class="code"><pre><span class="line">@RestController</span><br><span class="line">public class MailController &#123;</span><br><span class="line"></span><br><span class="line">	@Autowired(required = false)</span><br><span class="line">    private JavaMailSender jms;</span><br><span class="line">	@Autowired</span><br><span class="line">	private TemplateEngine templateEngine;</span><br><span class="line">	</span><br><span class="line">    @Value(&quot;$&#123;spring.mail.username&#125;&quot;)</span><br><span class="line">    private String from;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    String targetMail = &quot;888888@qq.com&quot;;</span><br><span class="line">    /**</span><br><span class="line">     * 发送简单的邮件</span><br><span class="line">     * @return</span><br><span class="line">     */</span><br><span class="line">    @RequestMapping(&quot;sendSimpleEmail&quot;)</span><br><span class="line">    public String sendMail()&#123;</span><br><span class="line">       try&#123;</span><br><span class="line">           SimpleMailMessage message = new SimpleMailMessage();</span><br><span class="line">           message.setFrom(from);</span><br><span class="line">           message.setTo(targetMail);//接收邮件号</span><br><span class="line">           message.setSubject(&quot;一封简单地邮件&quot;);//邮件主题</span><br><span class="line">           message.setText(&quot;Hello World&quot;);//邮件内容</span><br><span class="line">           jms.send(message);</span><br><span class="line">           return &quot;发送成功&quot;;</span><br><span class="line">       &#125;catch (Exception e)&#123;</span><br><span class="line">           e.getStackTrace();</span><br><span class="line">           return e.getMessage();</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    /**</span><br><span class="line">     * 发送HTML格式文件</span><br><span class="line">     * @return</span><br><span class="line">     */</span><br><span class="line">    @RequestMapping(&quot;sendHtmlEmail&quot;)</span><br><span class="line">    public String sendHtmlEmail()&#123;</span><br><span class="line">    	 MimeMessage message = null;</span><br><span class="line">         try &#123;</span><br><span class="line">             message = jms.createMimeMessage();</span><br><span class="line">           //发送邮件之间给自己抄送一份，防止网易当做垃圾邮件</span><br><span class="line">             message.addRecipients(MimeMessage.RecipientType.CC, InternetAddress.parse(from));</span><br><span class="line">             MimeMessageHelper helper = new MimeMessageHelper(message, true);</span><br><span class="line">             helper.setFrom(from); </span><br><span class="line">             helper.setTo(targetMail); // 接收地址</span><br><span class="line">             helper.setSubject(&quot;一封HTML格式的邮件&quot;); // 标题</span><br><span class="line">             // 带HTML格式的内容</span><br><span class="line">             StringBuffer sb = new StringBuffer(&quot;&lt;p style=&apos;color:#42b983&apos;&gt;使用Spring Boot发送HTML格式邮件。&lt;/p&gt;&quot;);</span><br><span class="line">             helper.setText(sb.toString(), true);</span><br><span class="line">             jms.send(message);</span><br><span class="line">             return &quot;发送成功&quot;;</span><br><span class="line">         &#125; catch (Exception e) &#123;</span><br><span class="line">             e.printStackTrace();</span><br><span class="line">             return e.getMessage();</span><br><span class="line">         &#125;</span><br><span class="line">    	</span><br><span class="line">    &#125;</span><br><span class="line">    /**</span><br><span class="line">     * 发送带附件的邮件</span><br><span class="line">     * @return</span><br><span class="line">     */</span><br><span class="line">    @RequestMapping(&quot;sendAttachmentsMail&quot;)</span><br><span class="line">    public String sendAttachmentsMail() &#123;</span><br><span class="line">        MimeMessage message = null;</span><br><span class="line">        try &#123;</span><br><span class="line">            message = jms.createMimeMessage();</span><br><span class="line">            MimeMessageHelper helper = new MimeMessageHelper(message, true);</span><br><span class="line">          //发送邮件之间给自己抄送一份，防止网易当做垃圾邮件</span><br><span class="line">            message.addRecipients(MimeMessage.RecipientType.CC, InternetAddress.parse(from));</span><br><span class="line">            helper.setFrom(from); </span><br><span class="line">            helper.setTo(targetMail); // 接收地址</span><br><span class="line">            helper.setSubject(&quot;一封带附件的邮件&quot;); // 标题</span><br><span class="line">            helper.setText(&quot;详情参见附件内容！&quot;); // 内容</span><br><span class="line">            // 传入附件</span><br><span class="line">            FileSystemResource file = new FileSystemResource(new File(&quot;src/main/resources/static/file/项目文档.docx&quot;));</span><br><span class="line">            helper.addAttachment(&quot;项目文档.docx&quot;, file);</span><br><span class="line">            jms.send(message);</span><br><span class="line">            return &quot;发送成功&quot;;</span><br><span class="line">        &#125; catch (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">            return e.getMessage();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    /**</span><br><span class="line">     * 发送模板邮件</span><br><span class="line">     * @param code</span><br><span class="line">     * @return</span><br><span class="line">     */</span><br><span class="line">    @RequestMapping(&quot;sendTemplateEmail&quot;)</span><br><span class="line">    public String sendTemplateEmail(String code) &#123;</span><br><span class="line">        MimeMessage message = null;</span><br><span class="line">        try &#123;</span><br><span class="line">            message = jms.createMimeMessage();</span><br><span class="line">            //发送邮件之间给自己抄送一份，防止网易当做垃圾邮件</span><br><span class="line">            message.addRecipients(MimeMessage.RecipientType.CC, InternetAddress.parse(from));</span><br><span class="line">            MimeMessageHelper helper = new MimeMessageHelper(message, true);</span><br><span class="line">            helper.setFrom(from); </span><br><span class="line">            helper.setTo(targetMail); // 接收地址</span><br><span class="line">            helper.setSubject(&quot;邮件摸板测试&quot;); // 标题</span><br><span class="line">            // 处理邮件模板</span><br><span class="line">            Context context = new Context();</span><br><span class="line">            context.setVariable(&quot;code&quot;, code);</span><br><span class="line">            String template = templateEngine.process(&quot;emailTemplate&quot;, context);</span><br><span class="line">            helper.setText(template, true);</span><br><span class="line">            jms.send(message);</span><br><span class="line">            return &quot;发送成功&quot;;</span><br><span class="line">        &#125; catch (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">            return e.getMessage();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>具体代码地址:<a href="https://gitee.com/chrnyuan/springboot_email.git" target="_blank" rel="noopener">https://gitee.com/chrnyuan/springboot_email.git</a></p>
+<!-- # 使用 pv 记录方式，每访问一次，记录一次--> 
+<p><span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/wechatpay.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -216,38 +260,110 @@
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">springboot</a>
         		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">IO</a>
-        		</li>
       		
 		</ul>
 	</div>
 
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/文件上传与下载//" class="article-tag-list-link color3">文件上传与下载</a>
-        		</li>
-      		
-		</ul>
-	</div>
+      
 
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/30/springboot-email/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2019/09/09/生成图片验证码Kaptcha/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">生成图片验证码Kaptcha</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -281,9 +397,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
