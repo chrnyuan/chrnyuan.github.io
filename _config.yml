@@ -3,10 +3,10 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 好好学习，天天向上
-subtitle: study
-description: zyk的个人博客，主要涉及到编程（Java，Python，Linux等
-keywords: wistbean，肯定会，java，python，电台，教程
+title: zyk
+subtitle: Java ajax，spring，mybatis
+description: zyk的个人博客
+keywords: wistbean，html，java，python，ajax，spring
 author: zyk
 language: zh-CN
 timezone:
@@ -72,6 +72,15 @@ pagination_dir: page
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
+#RSS订阅
+plugin:
+- hexo-generator-feed
+#Feed Atom
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+
 ## Themes: https://hexo.io/themes/
 theme: yilia
 
@@ -81,3 +90,23 @@ deploy:
   type: git
   repository: git@github.com:chrnyuan/chrnyuan.github.io
   branch: master
+
+#yilia 需要配置的数据
+jsonContent:
+    meta: false
+    pages: false
+    posts:
+      title: true
+      date: true
+      path: true
+      text: false
+      raw: false
+      content: false
+      slug: false
+      updated: false
+      comments: false
+      link: false
+      permalink: false
+      excerpt: false
+      categories: false
+      tags: true
