@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-11-11T06:43:44.119Z</updated>
+  <updated>2019-11-11T07:32:06.333Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>git的基础命令</title>
+    <link href="http://yoursite.com/2019/11/11/git%E7%9A%84%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/"/>
+    <id>http://yoursite.com/2019/11/11/git的基础命令/</id>
+    <published>2019-11-11T07:30:23.000Z</published>
+    <updated>2019-11-11T07:32:06.333Z</updated>
+    
+    <content type="html"><![CDATA[<p>git help<br>git clone git仓库地址           clone一个仓库到一个新的目录下<br>git init                 创建一个空的git仓库或者初始化一个现有的git仓库<br>git add <file>            将file文件内容添加到暂存区<br>git add .                将所有修改的文件添加进暂存区<br>git commit -m &lt;提交说明&gt;  将所有修改文件提交到当前分支<br>git rm <file>                  从暂存区里面删除file文件</file></file></p><p>git merge dev             把dev分支的代码合并到当前分支</p><a id="more"></a><p>git分支命令<br>查看、创建、切换和删除<br>git branch  查看本地分支<br>git branch –remote 查看远程分支<br>git branch -a 查看所有分支，包括本地和远程，对比远程存在本地那些没有的分支<br>git branch -v    查看各分支最后提交信息<br>git branch -m     old_branch new_branch   修改本地分支名</p><p>git branch 分支名 创建本地分支<br>git checkout 分支名    切换本地分支<br>git checkout -b 分支名 创建本地分支并切换到该分支下<br>git branch -d 分支名  删除本地分支<br>git branch -D 分支名  强制删除本地分支</p><p>git push origin 本地分支名:远程分支名        创建远程分支（本地分支一定要存在）<br>git push origin -d f分支名  删除远程分支</p><p>git remote -v 查看远程仓库地址<br>git fetch 将某个远程主机的更新，全部取回本地</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;git help&lt;br&gt;git clone git仓库地址           clone一个仓库到一个新的目录下&lt;br&gt;git init                 创建一个空的git仓库或者初始化一个现有的git仓库&lt;br&gt;git add &lt;file&gt;            将file文件内容添加到暂存区&lt;br&gt;git add .                将所有修改的文件添加进暂存区&lt;br&gt;git commit -m &amp;lt;提交说明&amp;gt;  将所有修改文件提交到当前分支&lt;br&gt;git rm &lt;file&gt;                  从暂存区里面删除file文件&lt;/file&gt;&lt;/file&gt;&lt;/p&gt;
+&lt;p&gt;git merge dev             把dev分支的代码合并到当前分支&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Git" scheme="http://yoursite.com/tags/Git/"/>
+    
+  </entry>
   
   <entry>
     <title>springboot_email</title>
