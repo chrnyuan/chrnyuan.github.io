@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-11-11T07:32:06.333Z</updated>
+  <updated>2019-12-26T08:45:17.180Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,42 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux 部署tomcat</title>
+    <link href="http://yoursite.com/2019/12/26/Linux-%E9%83%A8%E7%BD%B2tomcat/"/>
+    <id>http://yoursite.com/2019/12/26/Linux-部署tomcat/</id>
+    <published>2019-12-26T08:41:59.000Z</published>
+    <updated>2019-12-26T08:45:17.180Z</updated>
+    
+    <content type="html"><![CDATA[<p>配置：Linux 是ubuntu系统</p><a id="more"></a><h3 id="1：启动Tomcat"><a href="#1：启动Tomcat" class="headerlink" title="1：启动Tomcat"></a>1：启动Tomcat</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># install tomcat</span><br><span class="line">wget  http://mirror.bit.edu.cn/apache/tomcat/tomcat-9/v9.0.30/bin/apache-tomcat-9.0.30.tar.gz</span><br><span class="line"># 解压 tomcat</span><br><span class="line">tar -zxvf apache-tomcat-9.0.30.tar.gz</span><br><span class="line">#</span><br><span class="line">cd apache-tomcat-9.0.30</span><br><span class="line">#</span><br><span class="line">cd bin</span><br><span class="line"># 启动tomcat </span><br><span class="line">./startup.sh</span><br><span class="line">#启动以后打开浏览器输入ubuntu的ip加端口8080，查看是否可以访问到tomcat页面</span><br></pre></td></tr></table></figure><h3 id="2-修改Tomcat访问端口"><a href="#2-修改Tomcat访问端口" class="headerlink" title="2:修改Tomcat访问端口"></a>2:修改Tomcat访问端口</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cd tomcat</span><br><span class="line"># 进入配置文件目录</span><br><span class="line">cd conf</span><br><span class="line"># 修改配置文件</span><br><span class="line">vim server.xml</span><br><span class="line">#修改8080端口为8081，并保存退出</span><br><span class="line">：wq</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;配置：Linux 是ubuntu系统&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Linux Tomcat" scheme="http://yoursite.com/tags/Linux-Tomcat/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux 部署多台tomcat</title>
+    <link href="http://yoursite.com/2019/12/26/Linux-%E9%83%A8%E7%BD%B2%E5%A4%9A%E5%8F%B0tomcat/"/>
+    <id>http://yoursite.com/2019/12/26/Linux-部署多台tomcat/</id>
+    <published>2019-12-26T07:36:18.000Z</published>
+    <updated>2019-12-26T07:36:58.827Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+      <category term="Linux Tomcat" scheme="http://yoursite.com/tags/Linux-Tomcat/"/>
+    
+  </entry>
   
   <entry>
     <title>git的基础命令</title>
